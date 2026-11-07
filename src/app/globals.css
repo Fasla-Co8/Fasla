@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #082b59;
+  --color-brand: #1055a0;
+  --color-bright: #1769e8;
+  --color-gold: #b88b4a;
+  --color-beige: #d2ae75;
+  --color-cta: #ffd43b;
+  --color-leaf: #16a765;
+  --color-ink: #101010;
+  --font-sans: var(--font-inter), "Segoe UI", sans-serif;
+  --font-display: var(--font-jakarta), var(--font-inter), sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #101010;
+  font-family: var(--font-inter), var(--font-plex), "Segoe UI", sans-serif;
+}
+
+html[lang="ar"] body {
+  font-family: var(--font-plex), var(--font-cairo), sans-serif;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-jakarta), var(--font-inter), sans-serif;
+}
+
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] .font-display {
+  font-family: var(--font-cairo), var(--font-plex), sans-serif;
+}
+
+::selection {
+  background: #ffd43b;
+  color: #082b59;
+}
+
+.fasla-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.hl {
+  background-image: linear-gradient(#ffd43b, #ffd43b);
+  background-repeat: no-repeat;
+  background-position: 0 78%;
+  background-size: 100% 0.38em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.field {
+  width: 100%;
+  border: 1px solid #d5dbe6;
+  background: #fff;
+  color: #101010;
+  border-radius: 10px;
+  padding: 0.82rem 0.9rem;
+  font: inherit;
+}
+
+.field:focus {
+  outline: 2px solid #1769e8;
+  outline-offset: 1px;
+  border-color: #1769e8;
+}
+
+.ticker {
+  overflow: hidden;
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  gap: 1rem;
+  animation: fasla-ticker 72s linear infinite;
+}
+
+.ticker:hover .ticker-track,
+.ticker:focus-within .ticker-track {
+  animation-play-state: paused;
+}
+
+@keyframes fasla-ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}
+
+.phone {
+  width: min(100%, 280px);
+  border-radius: 36px;
+  background: #101010;
+  padding: 10px;
+  border: 1px solid #2a2a2a;
+}
+
+.phone-screen {
+  overflow: hidden;
+  border-radius: 28px;
+  background: #f7f8fb;
+  min-height: 520px;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white;
+  }
+}
